@@ -1,0 +1,32 @@
+[
+    {
+        "endpoint": "http://localhost:3010/producto",
+        "method": "GET",
+        "title": "Productos por ID",
+        "desc": "Obtiene un producto seleccionando la categoria y ingresando el id.",
+        "type": "ID"
+    },
+    {
+        "endpoint": "http://localhost:3010/producto",
+        "method": "GET",
+        "title": "Obtener Productos",
+        "desc": "Obtiene todos los productos seleccionando la categoria.",
+        "type": "Productos"
+    },
+    {
+        "endpoint": "http://localhost:3010/producto/allproducts",
+        "method": "GET",
+        "title": "Todos los productos",
+        "desc": "Todos los productos disponibles en base de datos",
+        "type": "Todos"
+    },
+    {
+        "endpoint": "http://localhost:3010/producto/search",
+        "method": "GET",
+        "title": "Buscador por nombre",
+        "desc": "Busca productos en los que coincida parte del nombre",
+        "type": "Search"
+    }  
+]
+
+

@@ -1,0 +1,152 @@
+.login-form {
+  background-color: var(--header-bgc);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.3s ease-out;
+  color: var(--login-tc);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-title {
+  color: var(--login-bgc);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.login-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.login-label {
+  color: var(--login-tc);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.login-input {
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--login-tc);
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: var(--title-tc);
+  box-shadow: 0 0 0 3px rgba(217, 174, 129, 0.25);
+}
+
+.login-input:disabled {
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.login-error {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: whitesmoke;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid red;
+}
+
+.login-error p {
+  margin: 0;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--login-tc);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.close-button:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 360px) {
+  .login-form {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .login-title {
+    font-size: 1.7rem;
+  }
+
+  .login-input {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .close-button {
+    font-size: 1.5rem;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-form {
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .login-form {
+    max-width: 450px;
+    padding: 2.5rem;
+  }
+
+  .login-title {
+    font-size: 2.2rem;
+  }
+}

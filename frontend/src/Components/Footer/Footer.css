@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--header-bgc);
+  color: var(--header-tc);
+  padding: 0.2rem;
+}
+
+.brand {
+  font-family: "Michroma", sans-serif;
+  color: var(--title-tc);
+  font-weight: bold;
+}

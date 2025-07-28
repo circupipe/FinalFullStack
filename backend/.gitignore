@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+node_modules
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build folders (si usás Babel o TypeScript)
+dist/
+build/
+
+# Coverage reports
+coverage/
+
+# SQLite (por si usás para tests)
+*.sqlite
+*.sqlite3
+
+# Otros posibles temporales
+*.pid
+*.seed
+
+# Editor settings
+.vscode/
+.idea/
+*.swp

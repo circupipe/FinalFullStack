@@ -1,0 +1,186 @@
+
+### BUSCADOR
+GET http://localhost:3010/producto/search/otr
+Content-Type: application/json; charset=utf-8
+
+
+### OBTENER TODOS LOS PRODUCTOS
+GET http://localhost:3010/producto/allproducts
+Content-Type: application/json; charset=utf-8
+
+### OBTENER TODOS LOS USUARIOS
+GET http://localhost:3010/users
+Content-Type: application/json; charset=utf-8
+
+### OBTENER USUARIO POR ID
+GET http://localhost:3010/users/id/3
+Content-Type: application/json; charset=utf-8
+
+### OBTENER USUARIO POR USERNAME
+GET http://localhost:3010/users/username/circupipe
+Content-Type: application/json; charset=utf-8
+
+### CREAR USUARIO
+POST http://localhost:3010/users/
+Content-Type: application/json; charset=utf-8
+
+{
+   "username": "m",
+   "email": "molly@gmail.com",
+   "password": "molly",
+   "firstname": "molly",
+   "lastname": "molly",
+   "type": "admin"
+}
+
+### ELIMINAR USUARIO POR ID
+DELETE http://localhost:3010/users/8
+
+### ACTUALIZAR USUARIO (PATCH)
+PATCH http://localhost:3010/users/2
+Content-Type: application/json; charset=utf-8
+
+{
+   "username": "user",
+   "email": "user@gmail.com",
+   "password": "user",
+   "firstname": "user",
+   "lastname": "user",
+   "type": "user"
+}
+
+### LOGIN
+POST http://localhost:3010/users/login
+Content-Type: application/json; charset=utf-8
+
+{
+  "username": "leonardo",
+  "password": "pipistrelo"
+}
+
+
+
+
+
+### OBTENER TODOS LOS cpu
+GET http://localhost:3010/producto/cpu/
+Content-Type: application/json; charset=utf-8
+
+### CPU
+POST http://localhost:3010/producto/cpu/
+Content-Type: application/json; charset=utf-8
+
+{
+  "product": "ADN Black",
+  "watts_consumption": 65,
+  "stock": 10,
+  "price": 123456,
+  "image": "fotolog.pic",
+  "platform_id": 1,
+  "socket_id": 1,
+  "frequency": 3.7,
+  "integrated": "alguna"
+}
+
+### RAM
+POST http://localhost:3010/producto/ram
+Content-Type: application/json; charset=utf-8
+
+{
+  "product": "doshe ram",
+  "watts_consumption": 15,
+  "stock": 12,
+  "price": 22222,
+  "image": "1500.vw",
+  "type_id": 2,
+  "capacity_gb": 16,
+  "speed_mhz": 3200
+}
+
+### MOTHERBOARD
+POST http://localhost:3010/producto/motherboard
+Content-Type: application/json; charset=utf-8
+
+{
+  "product": "hola",
+  "watts_consumption": 30,
+  "stock": 7,
+  "price": 33333,
+  "image": "willy.ytv",
+  "socket_id": 1,
+  "platform_id": 1,
+  "ram_slots": 4,
+  "ram_type_id": 2
+}
+
+### GRAPHICS CARD
+POST http://localhost:3010/producto/graphics_card
+Content-Type: application/json; charset=utf-8
+
+{
+  "product": "Integrada",
+  "watts_consumption": 170,
+  "stock": 6,
+  "price": 44444,
+  "image": "imagengrafica.gimp",
+  "ram_type_id": 2,
+  "capacity_gb": 12
+}
+
+### DISK
+POST http://localhost:3010/producto/disk
+Content-Type: application/json; charset=utf-8
+
+{
+  "product": "floppy disk de 3.5",
+  "watts_consumption": 5,
+  "stock": 9,
+  "price": 5555,
+  "image": "diskete.hdp",
+  "capacity_gb": 1000,
+  "technology_id": 3
+}
+
+### CASE
+POST http://localhost:3010/producto/case_pc
+Content-Type: application/json; charset=utf-8
+
+{
+  "product": "gabinete con vidrio",
+  "stock": 11,
+  "price": 6666,
+  "image": "transparente.jpg",
+  "colors": "vacio y cansado"
+}
+
+### POWER SUPPLY
+POST http://localhost:3010/producto/power_supply
+Content-Type: application/json; charset=utf-8
+
+{
+  "product": "la fuente de loh podereh",
+  "stock": 2,
+  "price": 7777,
+  "image": "fotito.svg",
+  "watts": 750,
+  "modular": true,
+  "certification_id": 2
+}
+
+### PUT POWER (PATCH)
+PATCH http://localhost:3010/producto/power_supply/1
+Content-Type: application/json; charset=utf-8
+
+{
+  "product": "Fuente actualizadahwww",
+  "stock": 5,
+  "price": 8888,
+  "image": "nueva-imagen.png",
+  "watts": 850,
+  "modular": false,
+  "certification_id": 2
+}
+
+### ELIMINAR POR ID ###
+DELETE http://localhost:3010/producto/cpu/88
+

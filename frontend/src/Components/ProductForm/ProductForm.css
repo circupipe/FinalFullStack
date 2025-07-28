@@ -1,0 +1,207 @@
+.product-form-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  padding-top: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.product-form-modal {
+  background-color: var(--header-bgc);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: slideIn 0.3s ease-out;
+  color: var(--header-tc);
+}
+
+.option {
+  background-color: var(--header-bgc);
+  color: var(--header-tc);
+}
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--header-tc);
+  padding-bottom: 1rem;
+}
+
+.form-header h2 {
+  color: var(--login-bgc);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--header-tc);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #ff4d4d;
+}
+
+.form-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.5rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.field-label {
+  color: var(--header-tc);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.field-input input,
+.field-input select {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--header-tc);
+  border-radius: 6px;
+  background-color: var(--header-bgc);
+  color: var(--header-tc);
+  font-size: 0.8rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.field-input input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.field-input input:focus,
+.field-input select:focus {
+  outline: none;
+  border-color: var(--title-tc);
+  box-shadow: 0 0 0 3px rgba(217, 174, 129, 0.25);
+}
+
+.field-input input:disabled,
+.field-input select:disabled {
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.field-input .input-error {
+  border-color: red;
+}
+
+.field-error {
+  color: #ff4d4d;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.error {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: var(--header-tc);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid red;
+}
+
+.success-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 128, 0, 0.8);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  z-index: 1001;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-form-modal {
+    padding: 1.5rem;
+  }
+  .form-header h2 {
+    font-size: 1.5rem;
+  }
+  .form-content {
+    grid-template-columns: 1fr;
+  }
+}

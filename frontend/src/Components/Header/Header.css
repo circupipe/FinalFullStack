@@ -1,0 +1,288 @@
+.header {
+  height: fit-content;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.usernav {
+  background-color: var(--login-bgc);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  color: var(--login-tc);
+}
+
+.searchnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1rem;
+  width: 100%;
+  gap: 1rem;
+  background-color: var(--header-bgc);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.textlogo {
+  font-family: "Michroma", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.3rem, 4vw, 2.5rem);
+  color: var(--title-tc);
+  white-space: nowrap;
+}
+
+.divmobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobilenav {
+  display: none;
+  color: var(--header-tc);
+}
+
+.hambmenu,
+.hambclose {
+  display: none;
+}
+
+.hambmenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  z-index: 10;
+  padding: 0.5rem;
+  width: 15rem;
+  border-radius: 0px 0px 0px 12px;
+}
+
+.petit {
+  margin-top: 2rem;
+}
+
+.closemobile {
+  color: var(--title-tc);
+  font-size: 2rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.buttonsnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--header-bgc);
+  border-top: 1px solid var(--border-header);
+  border-bottom: 1.5px solid rgba(245, 245, 245, 0.08);
+  padding: 0;
+  gap: 0.3rem;
+}
+
+.buttonnav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 2rem;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttonicon {
+  font-size: 1.5rem;
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+.buttontext {
+  font-size: 0.85rem;
+  color: var(--header-tc);
+  transition: color 0.3s ease;
+}
+
+.buttonnav:hover .buttonicon {
+  color: var(--login-bgc);
+}
+
+.buttonnav:hover .buttontext {
+  color: var(--text-hover);
+}
+
+.active-button .buttonicon {
+  color: var(--icon-hover);
+}
+
+.active-button .buttontext {
+  color: var(--text-hover);
+  font-weight: 600;
+}
+
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.7rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--login-bgc);
+  border-radius: 34px;
+  padding: 0 8px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--header-bgc);
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--login-bgc);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+@media (max-width: 800px) {
+  .usernav,
+  .searchnav {
+    padding-inline: 0.8rem;
+  }
+
+  .imglogo {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .buttontext {
+    font-size: 0.7rem;
+  }
+}
+.buttonnav {
+  padding-inline: 0.4rem;
+}
+
+@media (max-width: 550px) {
+  .buttontext {
+    font-size: 0.6rem;
+  }
+
+  .buttonsnav {
+    gap: 0.2rem;
+  }
+}
+
+@media (max-width: 480px) or (pointer: coarse) {
+  .buttonnav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-size: 2rem;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .divmobile {
+    width: 100%;
+  }
+
+  .usernav {
+    padding: 0.5rem 1rem;
+  }
+
+  .usernav > div:last-child {
+    width: 100%;
+    text-align: right;
+  }
+
+  .searchnav {
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .mobilenav {
+    display: flex;
+  }
+
+  .hambclose {
+    display: none;
+  }
+
+  .buttonsnav .buttonnav {
+    display: none;
+  }
+
+  .buttonicon {
+    font-size: 2rem;
+  }
+
+  .buttontext {
+    font-size: 1rem;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+}
